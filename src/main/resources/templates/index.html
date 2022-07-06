@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title th:text="${titulo}"></title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css'  th:href="@{/css/styles.css}">
+    <script src='main.js'></script>
+</head>
+<body>
+    <h1 th:text="${titulo}"></h1>
+ <div>   
+<table class="table-color">
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Numero</th>
+        <th>Equipo</th>
+        <th>Pais</th>
+    </tr>
+</thead>
+<tbody>
+    <tr th:each="i: ${jugadores}">
+        <td th:text="${i.nombre}"></td>
+        <td th:text="${i.numero}"></td>
+        <td th:text="${i.equipo.nombre}"></td>
+        <td th:text="${i.equipo.pais}"></td>
+   
+</tr>
+</tbody>
+
+</table>
+</div>
+</body>
+</html>
